@@ -6,9 +6,9 @@ PLATFORM = 32
 OPENCL_INCLUDE = ../_opencl/include
 OPENCL_LIB = ../_opencl/lib/win/x86
 
-CC = /c/_data/cryo/_apps/mingw64/bin/g++
+CC = g++
 CC_FLAGS = -W -Wall -std=c++11 -O3 -I$(OPENCL_INCLUDE) -m$(PLATFORM)
-LD = /c/_data/cryo/_apps/mingw64/bin/g++
+LD = g++
 LD_FLAGS = -fPIC -L$(OPENCL_LIB) -lOpenCL -m$(PLATFORM)
 
 ECHO = echo
