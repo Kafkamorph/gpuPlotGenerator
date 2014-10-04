@@ -6,9 +6,9 @@ PLATFORM = 32
 OPENCL_INCLUDE = ../_opencl/include
 OPENCL_LIB = ../_opencl/lib/win/x86
 
-CC = g++
+CC = /c/_data/cryo/_apps/mingw64/bin/g++
 CC_FLAGS = -W -Wall -std=c++11 -O3 -I$(OPENCL_INCLUDE) -m$(PLATFORM)
-LD = g++
+LD = /c/_data/cryo/_apps/mingw64/bin/g++
 LD_FLAGS = -fPIC -L$(OPENCL_LIB) -lOpenCL -m$(PLATFORM)
 
 ECHO = echo
@@ -43,7 +43,7 @@ dist: all
 	@$(ECHO) Generating distribution
 	@$(MKDIR) -p $(DIST_PATH)
 	@$(CP) $(EXE) $(DIST_PATH)
-	@$(CP) README $(DIST_PATH)
+	@$(CP) README.md $(DIST_PATH)
 	@$(CP) CHANGELOG $(DIST_PATH)
 	@$(CP) LICENSE $(DIST_PATH)
 	@$(TOUCH) $(DIST_PATH)/devices.txt
